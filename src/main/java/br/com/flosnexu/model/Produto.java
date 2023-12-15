@@ -2,6 +2,7 @@ package br.com.flosnexu.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,10 +23,12 @@ public class Produto {
 
 	@NotBlank(message = "O Atributo nome é Obrigatorio!")
 	@Size(min = 3, max = 255, message = "O Atributo Nome deve ter no minimo 3 e no maximo 50 Caracteres")
+	@Column(length = 255)
 	private String nome;
 
 	@NotBlank(message = "O Atributo Descrição é obrigatório")
-	@Size(min = 20, max = 1000, message = "O Atributo Nome deve ter no minimo 20 e no maximo 1000 Caracteres")
+	@Size(max = 1000, message = "O Atributo Nome deve ter no maximo 1000 Caracteres")
+	@Column(length = 1000)
 	private String descricao;
 
 	@NotNull(message = "O atributo preço é Obrigatorio!")

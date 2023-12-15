@@ -20,52 +20,43 @@ import jakarta.validation.constraints.Size;
 	@NotBlank(message = "O atributo categoria é obrigatorio !!")
 	@Size(min = 5, max = 100, message = "O atributo categoria deve conter no mínimo 05 e no máximo 100 caracteres")
 	@Column(length = 100)
-	private String nome_categoria; 
+	private String nome; 
 	
 	@Size(max = 1000, message = "O atributo texto deve conter no máximo 1000 caracteres") 
-	private String icone_categoria;
+	private String icone;
 	
 	@NotBlank(message = "O atributo descrição é obrigatório!")
-	private String descricao_categoria;
+	private String descricao;
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-	public String getNome_categoria() {
-		return nome_categoria;
+	public String getNome() {
+		return nome;
 	}
 
-
-	public void setNome_categoria(String nome_categoria) {
-		this.nome_categoria = nome_categoria;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-
-	public String getIcone_categoria() {
-		return icone_categoria;
+	public String getIcone() {
+		return icone;
 	}
 
-
-	public void setIcone_categoria(String icone_categoria) {
-		this.icone_categoria = icone_categoria;
+	public void setIcone(String icone) {
+		this.icone = icone;
 	}
 
-
-	public String getDescricao_categoria() {
-		return descricao_categoria;
+	public String getDescricao() {
+		return descricao;
 	}
 
-
-	public void setDescricao_categoria(String descricao_categoria) {
-		this.descricao_categoria = descricao_categoria;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	
-	
-}
+	}

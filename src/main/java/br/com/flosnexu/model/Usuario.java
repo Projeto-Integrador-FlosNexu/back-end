@@ -29,6 +29,11 @@ public class Usuario {
 	@Column(length = 100)
 	private String nome;
 
+	@NotBlank(message = "O atributo Foto é obrigatorio !!")
+	@Size(max = 1000, message = "O atributo Foto deve conter no máximo 100 caracteres")
+	@Column(length = 1000)
+	private String foto;
+	
 	@NotBlank(message = "O atributo Tipo é obrigatorio !!")
 	@Size(max = 100, message = "O atributo Tipo deve conter no máximo 100 caracteres")
 	@Column(length = 100)
@@ -43,6 +48,7 @@ public class Usuario {
 	@Size(min = 5, max = 100, message = "O atributo Senha deve conter no mínimo 05 e no máximo 100 caracteres")
 	@Column(length = 100)
 	private String senha;
+	
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
@@ -80,6 +86,14 @@ public class Usuario {
 		this.tipo = tipo;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

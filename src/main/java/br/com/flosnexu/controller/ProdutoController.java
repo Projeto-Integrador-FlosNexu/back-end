@@ -38,7 +38,8 @@ public class ProdutoController {
 	public ResponseEntity<List<Produto>> getAll() {
 		return ResponseEntity.ok(produtoRepository.findAll());
 	}
-
+	
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> getById(@PathVariable Long id) {
 		return produtoRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))

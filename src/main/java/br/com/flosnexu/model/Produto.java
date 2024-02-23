@@ -22,7 +22,7 @@ public class Produto {
 	private Long id;
 
 	@NotBlank(message = "O Atributo nome é Obrigatorio!")
-	@Size(min = 3, max = 255, message = "O Atributo Nome deve ter no minimo 3 e no maximo 50 Caracteres")
+	@Size(max = 255, message = "O Atributo Nome deve ter no minimo 3 e no maximo 50 Caracteres")
 	@Column(length = 255)
 	private String nome;
 
@@ -37,7 +37,8 @@ public class Produto {
 	@Size(min = 3, max = 255, message = "O Atributo Nome deve ter no minimo 3 e no maximo 50 Caracteres")
 	private String foto;
 
-	@Size(min = 3, max = 255, message = "O Atributo Nome deve ter no minimo 3 e no maximo 50 Caracteres")
+	@Size(max = 255, message = "O Atributo Nome deve ter no minimo 3 e no maximo 50 Caracteres")
+	@Column(length = 255)
 	private String marca;
 
 	private int quantidade;

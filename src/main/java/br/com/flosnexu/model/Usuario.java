@@ -30,7 +30,6 @@ public class Usuario {
 	@Column(length = 100)
 	private String nome;
 
-	@NotBlank(message = "O atributo Foto é obrigatorio !!")
 	@Size(max = 1000, message = "O atributo Foto deve conter no máximo 100 caracteres")
 	@Column(length = 1000)
 	private String foto;

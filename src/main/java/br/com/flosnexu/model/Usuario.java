@@ -34,10 +34,8 @@ public class Usuario {
 	@Column(length = 1000)
 	private String foto;
 	
-	@NotBlank(message = "O atributo Tipo é obrigatorio !!")
-	@Size(max = 100, message = "O atributo Tipo deve conter no máximo 100 caracteres")
-	@Column(length = 100)
-	private String tipo;
+	 @NotBlank(message = "Obrigatorio tipo Usuario, Não pode ter somentes espaços em brancos.")
+    private String tipo = "user";
 
 	@Schema(example = "email@email.com.br")
 	@NotBlank(message = "O atributo E-mail é obrigatorio !!")

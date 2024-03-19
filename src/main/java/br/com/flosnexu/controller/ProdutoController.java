@@ -57,14 +57,14 @@ public class ProdutoController {
 		return ResponseEntity.ok(produtoRepository.findAllByMarcaContainingIgnoreCase(marca));
 	}
 
-	@PostMapping
+	@PostMapping("/novo")
 	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto) {
 		if (categoriaRepository.existsById(produto.getCategoria().getId()))
 			return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Esta categoria não existe!!", null);
 	}
 
-	@PutMapping
+	@PutMapping("/editar")
 	public ResponseEntity<Produto> put(@Valid @RequestBody Produto produto) {
 		if (produtoRepository.existsById(produto.getId())) {
 			if (categoriaRepository.existsById(produto.getCategoria().getId()))
@@ -74,7 +74,7 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/deletar/{id}")
 	public void delete(@PathVariable Long id) {
 		Optional<Produto> produto = produtoRepository.findById(id);
 		if(produto.isEmpty())
